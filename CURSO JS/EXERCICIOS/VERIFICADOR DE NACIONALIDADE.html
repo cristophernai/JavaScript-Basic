@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificando nacionalidade brasileira</h1>
+    Qual pais esta morando:<input type="text" name="pais" id="p">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">Teste</div>
+    <br>
+
+    <H1>RADAR</H1>
+    Velocidade do cidadão: <input type="text" name="" id="vel"> 
+    <input type="button" value="Verificar" onclick="calvel()">
+    <div id="resvel">Calculando:</div>
+
+    
+
+    <script>
+        
+        function calcular(){
+            var txtv = String(window.document.getElementById('p').value)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Voce reside em <strong>${txtv}</strong></p>`
+            if (txtv == `brasil` || 'Brasil'){
+                res.innerHTML += `<p>Voce é Brasileiro</p>`
+            }else{
+                res.innerHTML += `Voce é estrangeiro`
+            }
+        }
+        function calvel(){
+            var vel = Number(window.document.getElementById(`vel`).value)
+            var resvel = window.document.getElementById(`resvel`)
+            if(vel >80){
+            resvel.innerHTML = `<p>A velocidade é de ${vel}km/h está acima do permitido, multar!</p>`
+            }else{
+            resvel.innerHTML = `<p>A velocidade é de ${vel}km/h está dentro do permitido, nao multar!</p>`
+           
+            }
+        }
+    </script>
+</body>
+</html>
